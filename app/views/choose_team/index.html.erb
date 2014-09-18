@@ -1,0 +1,9 @@
+<div class="col-md-12 text-center">
+	<h1> 選擇球隊 </h1>
+	<hr>
+
+	<% @teams.each do |team| %>
+		<h3> <%= link_to(team.name, team_games_path(team))  %> </h3>
+		<br>
+	<% end %>
+</div>

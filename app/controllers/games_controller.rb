@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 	before_action :find_team
 
 	def index
-
+		@games = @team.games
 	end
 
 	def show
@@ -17,7 +17,7 @@ class GamesController < ApplicationController
 		@game = @team.games.new game_params
 
 		if @game.save
-			redirect_to team_path(@team), notice: '賽事新增成功！'
+			redirect_to team_games_path(@team), notice: '賽事新增成功！'
 		else
 			render :new
 		end
@@ -31,7 +31,7 @@ class GamesController < ApplicationController
 		@game = @team.games.find(params[:id])
 
 		if @game.update game_params
-			redirect_to team_path(@team), notice: '賽事修改成功！'
+			redirect_to team_games_path(@team), notice: '賽事修改成功！'
 		else
 			render :edit
 		end
@@ -40,7 +40,7 @@ class GamesController < ApplicationController
 	def destroy
 		@game = @team.games.find(params[:id])
 		if @game.destroy
-			redirect_to team_path(@team), alert: '已刪除該賽事！'
+			redirect_to team_games_path(@team), alert: '已刪除該賽事！'
 		end
 	end
 
