@@ -59,7 +59,7 @@
                            :class => "btn btn-default btn-xs")%>
 
                <%= link_to("刪除", 
-                           team_player_path(game.team, game), 
+                           team_game_path(game.team, game), 
                            :class => "btn btn-default btn-xs ",
                            :method => :delete,
                            data: { confirm: "Are you sure?" } )%></td>
