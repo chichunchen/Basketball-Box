@@ -1,8 +1,38 @@
-<div class="col-md-4 text-center">
-	<h1>
+<div class="col-md-12">
+
+	<div class="group">
+	  <%= link_to("新增隊員", new_team_player_path(@team), :class => "btn btn-warning pull-right" ) %>
+    <%= link_to("修改", edit_team_path(@team), :class => "btn btn-primary pull-right" ) %>
+	</div>
+
+	<h1 class="text-center">
 	  <b> <%= @team.name %> </b>
 	</h1>
 
-	<%= link_to 'Edit', edit_team_path(@team) %> |
-	<%= link_to 'Back', teams_path %>
+	<table class="table">
+    <thead>
+      <tr>
+        <th> 背號 </th>
+        <th> 姓名 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %> 
+        <tr>
+          <td> #<%= player.number %> </td>
+          <td> <%= player.name %> </td>
+          <td> <%= link_to("Edit", 
+                           edit_team_player_path(player.team, player), 
+                           :class => "btn btn-default btn-xs")%>
+
+               <%= link_to("Delete", 
+                           team_player_path(player.team, player), 
+                           :class => "btn btn-default btn-xs ",
+                           :method => :delete,
+                           data: { confirm: "Are you sure?" } )%></td>
+        </tr>
+      <% end %> 
+    </tbody>
+  </table>
 </div>

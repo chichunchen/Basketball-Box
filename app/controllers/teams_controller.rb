@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @players = @team.players
   end
 
   # GET /teams/new
@@ -28,7 +29,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
+        format.html { redirect_to @team, notice: '已成功建立隊伍' }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class TeamsController < ApplicationController
   def update
     respond_to do |format|
       if @team.update(team_params)
-        format.html { redirect_to @team, notice: 'Team was successfully updated.' }
+        format.html { redirect_to @team, notice: '修改完畢！' }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to teams_url, alert: '隊伍已刪除' }
       format.json { head :no_content }
     end
   end

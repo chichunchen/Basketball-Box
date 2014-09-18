@@ -1,0 +1,16 @@
+<div class="col-md-4 col-md-offset-4">
+  <%= form_for [@team,@player] do |f| %>
+    <div class="form-inputs">
+
+      <br>
+      <%= f.number_field :number, :class => "form-control", :placeholder => "背號" %>
+      <br>
+      <%= f.text_field :name, :class => "form-control", :placeholder => "姓名" %>
+    </div>
+    
+    <hr>
+    <div class="form-actions">
+      <%= f.submit "確定", :class => "btn btn-primary"%>
+    </div>
+  <% end %> 
+</div>
