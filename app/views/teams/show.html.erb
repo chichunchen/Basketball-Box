@@ -1,8 +1,9 @@
 <div class="col-md-12">
 
 	<div class="group">
+    <%= link_to("新增賽事", new_team_game_path(@team), :class => "btn btn-warning pull-left" ) %>
 	  <%= link_to("新增隊員", new_team_player_path(@team), :class => "btn btn-warning pull-right" ) %>
-    <%= link_to("修改", edit_team_path(@team), :class => "btn btn-primary pull-right" ) %>
+    <%= link_to("修改隊名", edit_team_path(@team), :class => "btn btn-primary pull-right" ) %>
 	</div>
 
 	<h1 class="text-center">
@@ -22,11 +23,11 @@
         <tr>
           <td> #<%= player.number %> </td>
           <td> <%= player.name %> </td>
-          <td> <%= link_to("Edit", 
+          <td> <%= link_to("修改", 
                            edit_team_player_path(player.team, player), 
                            :class => "btn btn-default btn-xs")%>
 
-               <%= link_to("Delete", 
+               <%= link_to("刪除", 
                            team_player_path(player.team, player), 
                            :class => "btn btn-default btn-xs ",
                            :method => :delete,
@@ -35,4 +36,37 @@
       <% end %> 
     </tbody>
   </table>
+
+  <hr>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> 日期 </th>
+        <th> 賽事名稱 </th>
+        <th> 對手名稱 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @games.each do |game| %> 
+        <tr>
+          <td> <%= game.created_at.strftime("%B %d, %Y") %> </td>
+          <td> <%= game.name %> </td>
+          <td> <%= game.rival %> </td>
+          <td> <%= link_to("修改", 
+                           edit_team_game_path(game.team, game), 
+                           :class => "btn btn-default btn-xs")%>
+
+               <%= link_to("刪除", 
+                           team_player_path(game.team, game), 
+                           :class => "btn btn-default btn-xs ",
+                           :method => :delete,
+                           data: { confirm: "Are you sure?" } )%></td>
+        </tr>
+      <% end %> 
+    </tbody>
+  </table>
+
+
 </div>

@@ -1,0 +1,27 @@
+<div class="col-md-4 col-md-offset-4">
+  <%= form_for [@team,@game] do |f| %>
+      <% if @game.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@game.errors.count, "errors") %> prohibited this game from being saved:</h2>
+
+          <ul>
+          <% @game.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+    <div class="form-inputs">
+      <br>
+      <%= f.text_field :name, :class => "form-control", :placeholder => "比賽名稱" %>
+      <br>
+      <%= f.text_field :rival, :class => "form-control", :placeholder => "對手名稱" %>
+    </div>
+    
+    <hr>
+    <div class="form-actions">
+      <%= f.submit "確定", :class => "btn btn-primary"%>
+    </div>
+  <% end %> 
+</div>
