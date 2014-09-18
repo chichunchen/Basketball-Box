@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th> 背號 </th>
+        <th> 姓名 </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %> 
+        <tr>
+          <td> #<%= player.number %> </td>
+          <td> <%= player.name %> </td>
+          <td> <%= link_to("修改", 
+                           edit_team_player_path(player.team, player), 
+                           :class => "btn btn-default btn-xs")%>
+
+               <%= link_to("刪除", 
+                           team_player_path(player.team, player), 
+                           :class => "btn btn-default btn-xs ",
+                           :method => :delete,
+                           data: { confirm: "Are you sure?" } )%></td>
+        </tr>
+      <% end %> 
+    </tbody>
+</table>
