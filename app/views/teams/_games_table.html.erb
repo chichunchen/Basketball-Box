@@ -11,7 +11,7 @@
       <% @games.each do |game| %> 
         <tr>
           <td> <%= game.created_at.strftime("%B %d, %Y") %> </td>
-          <td> <%= game.name %> </td>
+          <td> <%= link_to game.name, team_game_path(game.team, game) %> </td>
           <td> <%= game.rival %> </td>
           <td> <%= link_to("修改", 
                            edit_team_game_path(game.team, game), 
