@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-4 text-center">
+	<h1>
+	  <b> <%= @team.name %> </b>
+	</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
-
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+	<%= link_to 'Edit', edit_team_path(@team) %> |
+	<%= link_to 'Back', teams_path %>
+</div>
