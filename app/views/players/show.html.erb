@@ -1,6 +1,6 @@
 <div class="col-md-12"> 
   
-<h1 class="text-center"> <%= @player.name %> </h1>
+<h1 class="text-center"> <%= @player.name %> - 歷史數據 </h1>
 
 <table class="table">
     <thead>
@@ -36,9 +36,7 @@
         <td> <%= @player.statistic.free_throw %> </td>
         <td> <%= @player.statistic.points %> </td>
         <td> 
-          <%= link_to("新增數據", '#', :class => "btn btn-info" ) %>
           <%= link_to("更新數據", '#', :class => "btn btn-warning" ) %>
-          <%= link_to("刪除數據", '#', :class => "btn btn-danger" ) %>
         </td>   
     	</tr>
 

@@ -3,11 +3,10 @@ class Player < ActiveRecord::Base
 
 	validates :number, :name, :presence => true	
 	validates :number, :inclusion => { :in => 0..99, :message => "請選擇號碼0至99號" }
-	# 同一對之中不能有一樣的號碼
-	# validates :number, :uniqueness => true
+	validates :number, :uniqueness => { scope: :team, message: "同一隊中不能有一樣的號碼" }
 	
 	belongs_to :team
-	has_one :statistic
+	has_one :statistic, dependent: :destroy
 
 	private 
 
