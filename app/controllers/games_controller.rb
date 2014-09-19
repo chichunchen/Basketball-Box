@@ -48,7 +48,7 @@ class GamesController < ApplicationController
 	private
 
 	def game_params
-		params.require(:game).permit(:name, :rival)
+		params.require(:game).permit(:category_id, :rival)
 	end
 
 	def find_team

@@ -1,8 +1,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th> 日期 </th>
-        <th> 賽事名稱 </th>
+        <th> 賽事 </th>
         <th> 對手名稱 </th>
         <th colspan="2"></th>
       </tr>
@@ -10,18 +9,19 @@
     <tbody>
       <% @games.each do |game| %> 
         <tr>
-          <td> <%= game.created_at.strftime("%B %d, %Y") %> </td>
-          <td> <%= link_to game.name, team_game_path(game.team, game) %> </td>
+          <td> 
+            <%= link_to category_and_date(game), team_game_path(game.team, game) %>  
+          </td>
           <td> <%= game.rival %> </td>
           <td> <%= link_to("修改", 
                            edit_team_game_path(game.team, game), 
                            :class => "btn btn-default btn-xs")%>
 
-               <%= link_to("刪除", 
+               <%= link_to("刪除",  
                            team_game_path(game.team, game), 
                            :class => "btn btn-default btn-xs ",
                            :method => :delete,
-                           data: { confirm: "Are you sure?" } )%></td>
+                           data: { confirm: "Are you sure?" } )%> </td>
         </tr>
       <% end %> 
     </tbody>

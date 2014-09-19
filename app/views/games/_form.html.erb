@@ -14,7 +14,7 @@
     
     <div class="form-inputs">
       <br>
-      <%= f.text_field :name, :class => "form-control", :placeholder => "比賽名稱" %>
+        <%= f.select(:category_id, category_options, {}, :class => "form-control", :prompt => "賽事種類") %>
       <br>
       <%= f.text_field :rival, :class => "form-control", :placeholder => "對手名稱" %>
     </div>
