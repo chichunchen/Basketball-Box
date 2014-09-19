@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
 	end
 	
 	def create
-		@player = @team.players.new player_params
+		@player = @team.players.new(player_params)
 
 		if @player.save
 			redirect_to team_path(@team), notice: '隊員新增成功！'
@@ -39,6 +39,7 @@ class PlayersController < ApplicationController
 	def show
 		# for player analysis
 		@player = @team.players.find(params[:id])
+		@statistic = @player.statistic
 	end
 
 	private

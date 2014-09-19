@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  2pt: 1
+  3pt: 1
+  off_rebound: 1
+  def_rebound: 1
+  assist: 1
+  block: 1
+  steal: 1
+  turnover: 1
+  foul: 1
+  free_throw: 1
+  points: 1
+
+two:
+  2pt: 1
+  3pt: 1
+  off_rebound: 1
+  def_rebound: 1
+  assist: 1
+  block: 1
+  steal: 1
+  turnover: 1
+  foul: 1
+  free_throw: 1
+  points: 1

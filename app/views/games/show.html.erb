@@ -1,5 +1,47 @@
 <div class="col-md-12"> 
-  
-<h1 class="text-center"> <%= @game.name %> </h1>
+	  
+	<h1 class="text-center"> <%= @game.name %> </h1>
 
+	<table class="table">
+    <thead>
+      <tr>
+        <th> 背號 </th>
+        <th> 姓名 </th>
+        <th> 兩分 </th>
+        <th> 三分 </th>
+        <th> 攻-守 <br> 籃 板 </th>
+        <th> 助攻 </th>
+        <th> 阻攻 </th>
+        <th> 抄截 </th>
+        <th> 失誤 </th>
+        <th> 犯規 </th>
+        <th> 罰球 </th>
+        <th> 得分 </th>
+        <th>  </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @players.each do |player| %> 
+        <tr>
+          <td> #<%= player.number %> </td>
+          <td> <%= link_to player.name, team_player_path(player.team, player) %>
+          <td> <%=  %> </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td>  </td>
+          <td> 
+            <%= link_to("新增數據", '#', :class => "btn btn-info" ) %>
+            <%= link_to("更新數據", '#', :class => "btn btn-warning" ) %>
+            <%= link_to("刪除數據", '#', :class => "btn btn-danger" ) %>
+          </td>
+        </tr>
+      <% end %> 
+    </tbody>
+  </table>
 </div>

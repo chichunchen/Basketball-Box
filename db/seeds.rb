@@ -10,5 +10,6 @@ create_teams = for i in 1..20 do
 				Team.create!([name: "隊伍 no.#{i}"])
 					for j in 1..12 do
 						Player.create!([team_id: "#{i}", number: "#{j}", name: "隊員#{j}"])
+						Game.create!([team_id:"#{i}", name: "賽事#{j}", rival: "對手#{j}"])
 					end
 				end

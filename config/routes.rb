@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :teams do
   	resources :players
-  	resources :games
+  	resources :games do
+  		resources :statistics
+  	end
   end
 
   root "home#index"
