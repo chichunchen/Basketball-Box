@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  
   get 'choose_team/index'
 
   resources :teams do

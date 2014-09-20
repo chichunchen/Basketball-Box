@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
 	before_action :find_team
+	before_action :authenticate_user!, :only => [:new, :edit, :create, :update, :destroy]
 
 	def new
 		@player = @team.players.new
