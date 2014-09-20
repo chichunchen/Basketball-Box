@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BasketballBox</title>
+  <title> 籃球盒子 </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 	<%= render "common/navbar" %>
-
-	<div class="container-fluid">
-		<br><br><br><br>
+<body>
+	<div class="container">
 		<%= notice_message %>
 		<%= yield %>
 	</div>
-
-	<%= render "common/footer" %>
 </body>
+	<%= render "common/footer" %>
 </html>

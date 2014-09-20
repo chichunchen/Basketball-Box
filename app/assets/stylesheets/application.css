@@ -16,3 +16,6 @@
 
  @import "bootstrap";
 
+ body {
+ 	padding: 40px;
+ }
