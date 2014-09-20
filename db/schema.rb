@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919154821) do
+ActiveRecord::Schema.define(version: 20140920122815) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "game_statistics", force: true do |t|
+    t.integer  "two_pt",      default: 0
+    t.integer  "three_pt",    default: 0
+    t.integer  "off_rebound", default: 0
+    t.integer  "def_rebound", default: 0
+    t.integer  "assist",      default: 0
+    t.integer  "block",       default: 0
+    t.integer  "steal",       default: 0
+    t.integer  "turnover",    default: 0
+    t.integer  "foul",        default: 0
+    t.integer  "free_throw",  default: 0
+    t.integer  "points",      default: 0
+    t.integer  "player_id"
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

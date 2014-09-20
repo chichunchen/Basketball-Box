@@ -1,3 +1,2 @@
-class StatisticsController < ApplicationController
-	
+class StatisticsController < ApplicationController	
 end

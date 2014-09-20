@@ -7,6 +7,7 @@ class Player < ActiveRecord::Base
 	
 	belongs_to :team
 	has_one :statistic, dependent: :destroy
+	has_many :game_statistic, dependent: :destroy
 
 	private 
 
